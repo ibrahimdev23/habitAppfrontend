@@ -38,7 +38,7 @@ const SignUp = () => {
     <div className="bg-white p-8 rounded shadow-md max-w-md w-full mx-auto mt-40">
         <h2 className="font-bold text-2xl mb-10 text-center">Join HabitApp </h2>
 
-        <form >
+        <form onsubmit="event.preventDefault()">
         <div className="mt-4">
                 <label for="email" className="font-semibold text-xs0">Email address: </label>
                 <input 
