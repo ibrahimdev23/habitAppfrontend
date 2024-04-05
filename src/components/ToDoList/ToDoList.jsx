@@ -67,7 +67,7 @@ const ToDoList = ({date}) => {
 		const userId = user["id"]
 		let data = {"date":day, userId}
 	
-		const res = await fetch(`https://habitapp-4b.onrender.com/api/update_streak`, {
+		const res = await fetch(`https://habitapp-8-ld2o.onrender.com/api/update_streak`, {
 			
 			method: "POST", 
 			headers: {

@@ -28,7 +28,7 @@ function Login(props,) {
         const account = {
             username, password
         }
-        const res = await fetch(`https://habitapp-4b.onrender.com/api/login`, {
+        const res = await fetch(`https://habitapp-8-ld2o.onrender.com/api/login`, {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json",
