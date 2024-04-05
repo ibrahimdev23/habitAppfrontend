@@ -30,17 +30,7 @@ const Dashboard = () => {
         let data = {userId}
   
       
-        const res = await fetch(`https://habitapp-8-ld2o.onrender.com/api/streaks`, {
-          
-          method: "POST", 
-          headers: {
-            "Content-Type": "application/json",
-            'Accept': 'application/json',
-            
-            },
-            body: JSON.stringify(data),
-          });
-      
+        const res = await fetch(`https://habitapp-11.onrender.com/api/streaks/${userId}`)
           const response = await res.json()
           
          

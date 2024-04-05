@@ -60,30 +60,34 @@ const nextYear = () => {
 
 
 const  getStreaks = async () => {
-		
+		console.log("ehy")
   const userId = user["id"]
 
-  let data = {userId}
-
-
-  const res = await fetch(`http://127.0.0.1:8000/api/streaks`, {
-    
-    method: "POST", 
-    headers: {
-      "Content-Type": "application/json",
-      'Accept': 'application/json',
+  let dataObj = {userId}
+  // /api/streaks/<int:user_id>
+  const res = await fetch(`https://habitapp-11.onrender.com/api/streaks/${userId}`)
+    // method: "POST", 
+    // headers: {
+    //   "Content-Type": "application/json",
+    //   'Accept': 'application/json',
       
-      },
-      body: JSON.stringify(data),
-    });
+    //   },
+    //   body: JSON.stringify(dataObj),
+    // });
 
-    const response = await res.json()
+  const data = await res.json()
+ post(data)
+
+   
     
-    let tempStreaks = []
-    let newStreaks = []
+}
+
+const post = (response) => {
+  let tempStreaks = []
+ 
 
       for(let i = 0; i < response.length; i++){
-        count++
+        console.log("hey")
         let resData = response[i].date
         if(resData !== null && resData !== undefined ) {
           let streak = resData.replace(/[^a-zA-Z0-9 ]/g, "")
@@ -94,16 +98,11 @@ const  getStreaks = async () => {
   
       }
 
-    
     setStreaks(tempStreaks)
     console.log(streaks)
-    
-}
-useEffect(() => {
-  getStreaks()
-  
 
-},[])
+}
+
 
 setStreakCount(streaks.length)
 
@@ -111,7 +110,17 @@ const loadStreaks = () => {
   getStreaks()
   setStreakCount(streaks.length)
 
+
+
 }
+
+useEffect(() => {
+  getStreaks()
+  
+
+},[])
+
+
 
 
   return (
@@ -174,13 +183,13 @@ const loadStreaks = () => {
         let mark = false;
        
      
-      let pos  = []
+        let pos  = []
         
         
         for(let i = 0; i < streaks.length;i++){
           if(streaks[i].getMonth() === value.getMonth() && streaks[i].getYear() === value.getYear()){
               pos.push(streaks[i].getDate())
-        
+            
           }
         }
       
