@@ -85,7 +85,7 @@ const  getStreaks = async () => {
       for(let i = 0; i < response.length; i++){
         count++
         let resData = response[i].date
-        if(resData !== null && resData !== undefined && tempStreaks.includes(resData) == false) {
+        if(resData !== null && resData !== undefined ) {
           let streak = resData.replace(/[^a-zA-Z0-9 ]/g, "")
           let dateToMark = new Date(streak)
           tempStreaks.push(dateToMark)
