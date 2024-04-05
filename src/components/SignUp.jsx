@@ -6,9 +6,9 @@ const SignUp = () => {
     const [password, setPassword] = useState("")
 
 
-    const registerUser = async () => {
+    const registerUser = async (e) => {
 
-        
+        e.preventDefault()
             const user = {
                 username, email, password
             }
@@ -28,7 +28,7 @@ const SignUp = () => {
             
                 
         }
-    
+ 
 
     return (
         <>
@@ -38,7 +38,7 @@ const SignUp = () => {
     <div className="bg-white p-8 rounded shadow-md max-w-md w-full mx-auto mt-40">
         <h2 className="font-bold text-2xl mb-10 text-center">Join HabitApp </h2>
 
-        <form onsubmit="return false">
+        <form onsubmit={(event) => event.preventDefault()} return false>
         <div className="mt-4">
                 <label for="email" className="font-semibold text-xs0">Email address: </label>
                 <input 
@@ -71,7 +71,7 @@ const SignUp = () => {
          
             <div className="mt-6">
                 <button 
-                onClick={registerUser}
+                onClick={ e => registerUser(e)}
                 className="flex w-full items-center justify-center h-12 px-6 w-64 bg-red-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700 hover:bg-blue-700">
                 Sign up</button>
             </div>
