@@ -12,7 +12,7 @@ const SignUp = () => {
             const user = {
                 username, email, password
             }
-            const res = await fetch(`https://habitapp-8-ld2o.onrender.com/api/register`, {
+            const res = await fetch(`https://habitapp-11.onrender.com/api/register`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json",
