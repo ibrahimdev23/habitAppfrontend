@@ -102,8 +102,8 @@ const ToDoList = ({date}) => {
 
 	useEffect(() => {
 		addToUserData()
-		
-	}, [tasks])
+		postStreakData()
+	}, [])
 	
 	return (
 		<div class=" c flex-grow items-center justify-center text-gray-600  ">
