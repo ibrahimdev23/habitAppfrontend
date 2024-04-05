@@ -22,10 +22,9 @@ const SignUp = () => {
                 });
             
     
-            const data = await res.json()
-            if(data){
-                return <Login/>
-            }
+          
+           return <Login/>
+        
             
                 
         }
